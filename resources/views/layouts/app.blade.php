@@ -39,7 +39,7 @@
         @yield('content')
     </main>
 
-    <footer class="bg-gray-800 text-white py-8 mt-12">
+    <footer class="bg-gray-800 text-white py-6 mt-3">
         <div class="container mx-auto px-4 text-center">
             <p>&copy; 2024 Pasar Ikan Danau Toba. Mendukung Ekonomi Lokal Nelayan.</p>
         </div>
