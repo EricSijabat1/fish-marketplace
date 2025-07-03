@@ -4,16 +4,20 @@
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\Seller\SellerController;
+use App\Http\Controllers\PageController; // <-- Tambahkan ini
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
+// Route untuk landing page baru kita
+Route::get('/', [PageController::class, 'home'])->name('home');
 
-Route::get('/', [ProductController::class, 'index'])->name('home');
+// Route untuk daftar semua produk
 Route::get('/products', [ProductController::class, 'index'])->name('products.index');
 Route::get('/products/{product}', [ProductController::class, 'show'])->name('products.show');
 
 Auth::routes();
 
+// ... sisa route lainnya tetap sama
 Route::middleware(['auth'])->group(function () {
     Route::post('/orders', [OrderController::class, 'store'])->name('orders.store');
     Route::get('/orders/{order}', [OrderController::class, 'show'])->name('orders.show');

@@ -1,14 +1,10 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FreshCatch - Ikan Segar Langsung dari Nelayan</title>
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+@extends('layouts.app')
+
+@section('title', 'FreshCatch - Ikan Segar Langsung dari Nelayan')
+
+@section('styles')
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
     :root {
         --primary-blue: #0066CC;
@@ -36,75 +32,11 @@
         background-color: var(--white);
     }
 
-    /* Navbar Styles */
-    .navbar {
-        background: rgba(0, 0, 0, 0.1) !important;
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        transition: all 0.3s ease;
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 1000;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .navbar.scrolled {
-        background: rgba(0, 0, 0, 0.9) !important;
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-    }
-
-    .navbar-brand {
-        font-weight: 700 !important;
-        font-size: 1.5rem !important;
-        color: var(--white) !important;
-    }
-
-    .navbar-nav .nav-link {
-        color: rgba(255, 255, 255, 0.9) !important;
-        font-weight: 500;
-        transition: all 0.3s ease;
-    }
-
-    .navbar-nav .nav-link:hover,
-    .navbar-nav .nav-link.active {
-        color: var(--white) !important;
-        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-    }
-
-    .btn-outline-light {
-        border-color: rgba(255, 255, 255, 0.5);
-        color: var(--white);
-        transition: all 0.3s ease;
-    }
-
-    .btn-outline-light:hover {
-        background: var(--white);
-        color: var(--primary-blue);
-        border-color: var(--white);
-    }
-
-    .btn-light {
-        background: var(--white);
-        color: var(--primary-blue);
-        border: none;
-        font-weight: 600;
-        transition: all 0.3s ease;
-    }
-
-    .btn-light:hover {
-        background: var(--light-blue);
-        color: var(--ocean-blue);
-        transform: translateY(-2px);
-    }
-
     /* Hero Section */
     .hero-section {
         position: relative;
         height: 100vh;
-        background: url('https://images.unsplash.com/photo-1544943910-4c1dc44aab44?q=80&w=1170&auto=format&fit=crop') center/cover;
+        background: linear-gradient(135deg, var(--primary-blue) 0%, var(--ocean-blue) 100%);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -118,7 +50,8 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background: linear-gradient(135deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.4) 100%);
+        background: url('https://images.unsplash.com/photo-1623598122059-9b5ef17619c8?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover;
+        opacity: 0.2;
         z-index: 1;
     }
 
@@ -195,18 +128,6 @@
     /* Section Styles */
     .section {
         padding: 80px 0;
-    }
-
-    .main-content {
-        margin-top: 0;
-    }
-
-    .footer {
-        background: var(--text-dark);
-        color: var(--white);
-        padding: 40px 0;
-        text-align: center;
-        margin-top: 80px;
     }
 
     .section-title {
@@ -453,7 +374,7 @@
         }
     }
 </style>
-
+@endsection
 
 @section('content')
     <!-- Hero Section -->
